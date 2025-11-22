@@ -3,21 +3,22 @@
 
 public class Employee
 {
+    private static int empCount;
+    private static int nextID;
+
 
     static Employee()
     {
-        EmployeeCount = 0;
         nextID = 1000;
     }
     public Employee()
     {
         this.ID = nextID;
         nextID++;
-        EmployeeCount++;
+        empCount++;
     }
 
-    public static int EmployeeCount { get; set; }
-    private static int nextID;
+    public static int EmployeeCount { get => empCount; }
 
     private int ID { get; init; }
     public required string Department { get; set; }
